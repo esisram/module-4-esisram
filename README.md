@@ -206,3 +206,13 @@ README.md
 ```
 
 ## 7. last but not least, the repository will be deployed with netlify
+
+1. open [netlify](https://www.netlify.com/)
+2. log in -> Log in with github
+3. Add new site -> import an existing project
+4. Lets deploy your proeject Github
+5. select your repository (module-4-esisram)
+6. just fill base directory with project-4
+7. click deploy module-4-esisram
+8. please wait until deploying process is done
+9. please open your website in this [link](https://helpful-cactus-297b57.netlify.app/)
