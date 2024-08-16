@@ -215,4 +215,14 @@ README.md
 6. just fill base directory with project-4
 7. click deploy module-4-esisram
 8. please wait until deploying process is done
-9. please open your website in this [link](https://helpful-cactus-297b57.netlify.app/)
+9. please open your website in this [link](https://main--jolly-kelpie-3b1ada.netlify.app/)
+
+## 8. additional information
+
+please don't push node_modules or build folder into github because when performing through netlify, It will create build folder and node_modules. in order to do that, please add .gitignore file the fill with the following codes.
+
+```
+//list ignore to github//
+node_modules
+build
+```

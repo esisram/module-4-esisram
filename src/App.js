@@ -7,7 +7,7 @@ import Step2 from './Step2'
 import Step3 from './Step3'
 
 const MultiStepForm = () => {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(1) //variable step dan setStep bebas bukan bawaan, angka 0 pada useState boleh beb
 
   const handleNext = () => {
     setStep(step + 1)
@@ -109,7 +109,7 @@ const step2Schema = yup.object().shape({
 
 const step3Schema = yup.object().shape({
   username: yup.string().required('Username is required'),
-  password: yup.string().min(8, 'Password must be at least 8 characters long').required('Password is required')
+  password: yup.string().min(100, 'Password must be at least 8 characters long').required('Password is required')
 })
 
 export default MultiStepForm
