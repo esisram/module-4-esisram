@@ -194,6 +194,9 @@ Project-4/
 │ └── logo.svg
 │ └── reportWebVitals.js
 │ └── setupTests.js
+│ └── Register.js
+│ └── Login.js
+│ └── Category.js
 │ └── Step1.js
 │ └── Step2.js
 │ └── Step3.js
@@ -215,14 +218,64 @@ README.md
 6. just fill base directory with project-4
 7. click deploy module-4-esisram
 8. please wait until deploying process is done
-9. please open your website in this [link](https://main--jolly-kelpie-3b1ada.netlify.app/)
+9. please open your website in this [link](https://helpful-cactus-297b57.netlify.app/)
 
-## 8. additional information
+## 8 melanjutkan tugas final checkpoint
 
-please don't push node_modules or build folder into github because when performing through netlify, It will create build folder and node_modules. in order to do that, please add .gitignore file the fill with the following codes.
+1. Install axios
 
 ```
-//list ignore to github//
-node_modules
-build
+npm install axios
+npm install react-router-dom
+```
+
+2. coding App.js merupakan file MultiStepForm untuk signup, sehingga bisa dibuat file baru Register.js yang berisi code dari App.js
+3. bikin login.js yang berisi memasukan username dan password untuk masuk.
+4. bikin Category.js untuk memasuka post,delete, etc
+5. berikut App.js code
+
+```
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import MultiStepForm from './Register'
+import Login from './Login'
+import Category from './Category'
+
+const App = () => {
+  return (
+    <Router>
+      <div className='min-h-screen bg-gray-100'>
+        <header className='bg-blue-600 text-white p-4'>
+          <nav className='container mx-auto flex justify-between items-center'>
+            <h1 className='text-xl font-bold'>My Application</h1>
+            <div>
+              <Link to='/' className='text-white hover:underline mx-2'>
+                Home
+              </Link>
+              <Link to='/register' className='text-white hover:underline mx-2'>
+                Register
+              </Link>
+              <Link to='/login' className='text-white hover:underline mx-2'>
+                Login
+              </Link>
+              <Link to='/categories' className='text-white hover:underline mx-2'>
+                Categories
+              </Link>
+            </div>
+          </nav>
+        </header>
+        <main className='py-6'>
+          <Routes>
+            <Route path='/' element={<div className='text-center text-lg'>Welcome to the Application!</div>} />
+            <Route path='/register' element={<MultiStepForm />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/categories' element={<Category />} />
+            <Route path='*' element={<div className='text-center text-lg'>404 - Page Not Found</div>} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  )
+}
+
+export default App
 ```
