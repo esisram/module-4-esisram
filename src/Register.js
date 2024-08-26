@@ -20,7 +20,7 @@ const MultiStepForm = () => {
     setStep(step - 1)
   }
 
-  const handleSubmit = async data => {
+  const handleSubmit = async (data) => {
     setLoading(true)
     setError('')
     try {

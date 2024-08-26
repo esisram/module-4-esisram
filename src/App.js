@@ -28,7 +28,7 @@ const App = () => {
         </header>
         <main className='py-6'>
           <Routes>
-            <Route path='/' element={<div className='text-center text-lg'>Welcome to the Application!</div>} />
+            <Route path='/' element={<div className='text-center text-lg'>Welcome to Final CheckPoints!</div>} />
             <Route path='/register' element={<MultiStepForm />} />
             <Route path='/login' element={<Login />} />
             <Route path='/categories' element={<Category />} />

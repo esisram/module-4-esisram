@@ -19,7 +19,7 @@ const Login = () => {
     mode: 'onTouched'
   })
 
-  const handleLogin = async data => {
+  const handleLogin = async (data) => {
     try {
       setLoading(true)
       setError(null)

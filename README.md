@@ -222,17 +222,19 @@ README.md
 
 ## 8 melanjutkan tugas final checkpoint
 
-1. Install axios
+1. Install dependencies pada repo https://github.com/revou-fsse-5/module-4-server and https://github.com/revou-fsse-5/module-4-esisram.git setelah di clone
 
 ```
+npm install
 npm install axios
 npm install react-router-dom
+npm run build
 ```
 
-2. coding App.js merupakan file MultiStepForm untuk signup, sehingga bisa dibuat file baru Register.js yang berisi code dari App.js
-3. bikin login.js yang berisi memasukan username dan password untuk masuk.
-4. bikin Category.js untuk memasuka post,delete, etc
-5. berikut App.js code
+2. pada repo module-4-esisram ->coding App.js merupakan file MultiStepForm untuk signup, sehingga bisa dibuat file baru Register.js yang berisi code dari App.js
+3. pada repo module-4-esisram ->bikin login.js yang berisi memasukan username dan password untuk masuk.
+4. pada repo module-4-esisram -> bikin Category.js untuk memasuka post,delete, etc
+5. pada repo module-4-esisram -> berikut App.js code
 
 ```
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
@@ -279,3 +281,38 @@ const App = () => {
 
 export default App
 ```
+
+6. Jalankan API module-4-server dengan cara: `npm start` lalu localhost:8080 akan muncul.
+7. Jalankan website repo module-4-esisram dengan cara: `npm start` lalu localhost:3000 akan muncul dengan halaman website yang dapat dilihat pada gambar berikut:
+
+Tampilan Home
+
+<img src="./images/Home.png" alt="add relative path to image" 
+   width="5000" height='300'/>
+
+Tampilan Register:
+
+<img src="./images/Step1.png" alt="add relative path to image" 
+   width="500" height='300'/>
+<img src="./images/Step2.png" alt="add relative path to image" 
+   width="500" height='300'/>
+<img src="./images/Step3.png" alt="add relative path to image" 
+   width="500" height='300'/>
+
+Lalu setelah klik submit, maka data tersebut akan tersimpan pada Api localhost:8080. cara aksesnya ada buka -> http://localhost:8080/ -> klik /users -> muncul list register users.
+<img src="./images/users.png" alt="add relative path to image" 
+   width="500" height='300'/>
+
+Tampilan Login: coba login menggunakan akun yang sudah didaftarkan misalnya akun dengan username 'ahmaddahlan' yang sudah di register lalu klik login.
+<img src="./images/Login.png" alt="add relative path to image" 
+   width="5000" height='300'/>
+
+Tampilan Categories: misalnya saya ingin memasukan Category Name "Percobaa Memasukan Data Categories"
+<img src="./images/Categories.png" alt="add relative path to image" 
+   width="5000" height='300'/>
+stelah klik add, maka akan menambah pada category list:
+<img src="./images/CategoriesList.png" alt="add relative path to image" 
+   width="5000" height='300'/>
+data category name juga akan ada di Api localhost:8080.
+<img src="./images/ApiCategories.png" alt="add relative path to image" 
+   width="5000" height='300'/>

@@ -35,12 +35,12 @@ const Category = () => {
     fetchCategories()
   }, [])
 
-  const handleAddCategory = async data => {
+  const handleAddCategory = async (data) => {
     try {
       setLoading(true)
       setError(null)
       const response = await axios.post('http://localhost:8080/categories', data)
-      setCategories(prev => [...prev, { id: response.data.id, ...data }])
+      setCategories((prev) => [...prev, { id: response.data.id, ...data }])
       methods.reset()
     } catch (error) {
       setError('Failed to add category')
@@ -49,12 +49,12 @@ const Category = () => {
     }
   }
 
-  const handleUpdateCategory = async data => {
+  const handleUpdateCategory = async (data) => {
     try {
       setLoading(true)
       setError(null)
       await axios.put(`http://localhost:8080/categories/${editingCategory.id}`, data)
-      setCategories(prev => prev.map(cat => (cat.id === editingCategory.id ? { id: cat.id, ...data } : cat)))
+      setCategories((prev) => prev.map((cat) => (cat.id === editingCategory.id ? { id: cat.id, ...data } : cat)))
       setEditingCategory(null)
       methods.reset()
     } catch (error) {
@@ -64,7 +64,7 @@ const Category = () => {
     }
   }
 
-  const handleDeleteCategory = async id => {
+  const handleDeleteCategory = async (id) => {
     const confirmed = window.confirm('Are you sure you want to delete this category?')
     if (!confirmed) return
 
@@ -72,7 +72,7 @@ const Category = () => {
       setLoading(true)
       setError(null)
       await axios.delete(`http://localhost:8080/categories/${id}`)
-      setCategories(prev => prev.filter(cat => cat.id !== id))
+      setCategories((prev) => prev.filter((cat) => cat.id !== id))
     } catch (error) {
       setError('Failed to delete category')
     } finally {
@@ -80,7 +80,7 @@ const Category = () => {
     }
   }
 
-  const handleEdit = category => {
+  const handleEdit = (category) => {
     setEditingCategory(category)
     methods.setValue('name', category.name)
   }
@@ -120,7 +120,7 @@ const Category = () => {
         <div className='mt-6'>
           <h2 className='text-lg font-medium mb-4'>Category List</h2>
           <ul>
-            {categories.map(category => (
+            {categories.map((category) => (
               <li key={category.id} className='flex justify-between items-center mb-2 p-2 bg-gray-100 rounded'>
                 <span>{category.name}</span>
                 <div>
